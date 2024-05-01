@@ -195,12 +195,14 @@ public class Controler : MonoBehaviour
     }
 
     public float wallJumpForce;
+  [Tooltip("1 for the up foce to be fully there, 0 for the force o be only horizontal")]
+    public float upForceWeaker;
     void handleWallJump()
     {
         if (!isGrounded && Input.GetKeyDown(KeyCode.Space) && GetComponentInChildren<wallJump>().walljumpAvailable)
         {
             rb.velocity = Vector2.zero;
-            rb.AddForce((new Vector3 { x = GetComponentInChildren<wallJump>().direction } * wallJumpForce) + (Vector3.up * wallJumpForce));
+            rb.AddForce((new Vector3 { x = GetComponentInChildren<wallJump>().direction } * wallJumpForce) + (Vector3.up * wallJumpForce * upForceWeaker));
         }
     }
 
@@ -349,22 +351,7 @@ public class Controler : MonoBehaviour
             isGrounded = false;
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.collider.CompareTag("ground"))
-        {
-
-        isGrounded = true;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.collider.CompareTag("ground"))
-        {
-
-        isGrounded = false;
-        }
-    }
+  
 
 
 }

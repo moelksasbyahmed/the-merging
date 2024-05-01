@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7304d14b61c6a4db6a6a3c3cf4eb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 6552418876115569176, guid: 8a723e055595e2f4ea3fe7e5360bf5b2, type: 3}
   color: {r: 0, g: 0.31526923, b: 1, a: 0}
 --- !u!114 &6938623896346082149
 MonoBehaviour:
