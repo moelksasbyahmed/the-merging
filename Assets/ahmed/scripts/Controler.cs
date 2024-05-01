@@ -149,6 +149,7 @@ public class Controler : MonoBehaviour
     private float chargingtime;
     private float starttime;
     private bool allowed;
+    public int normalJumpForce;
     void jumpwhilewalking()
     {
         if (Input.GetKeyDown(KeyCode.Space) &&  /*&& canJump*/  isGrounded)
@@ -157,7 +158,7 @@ public class Controler : MonoBehaviour
             bool isRunning = animator.GetBool("running");
 
            
-                rb.AddForce(Vector2.up * 350f);
+                rb.AddForce(Vector2.up * normalJumpForce);
 
             
         }
@@ -236,11 +237,11 @@ public class Controler : MonoBehaviour
         }
     }
 
-
+    public float airControlSpeed;
     private void HandleMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        float speed = (Input.GetKey(KeyCode.LeftShift)) ? runSpeed : walkSpeed;
+        float speed = (Input.GetKey(KeyCode.LeftShift) && isGrounded) ? runSpeed :(isGrounded)? walkSpeed:airControlSpeed;
         Vector2 movement = new Vector2(horizontalInput * speed, rb.velocity.y);
 
         // Apply smoothing to avoid sudden velocity changes
@@ -342,7 +343,7 @@ public class Controler : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.name == "Grid")
+        if(collision.collider.gameObject.name == "terrain")
         {
 
         isGrounded = true;
@@ -350,7 +351,7 @@ public class Controler : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.name == "Grid")
+        if(collision.collider.gameObject.name == "terrain")
         {
 
         isGrounded = false;
