@@ -343,7 +343,7 @@ public class Controler : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.name == "terrain")
+        if(collision.collider.CompareTag("ground"))
         {
 
         isGrounded = true;
@@ -351,7 +351,7 @@ public class Controler : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.name == "terrain")
+        if(collision.collider.CompareTag("ground"))
         {
 
         isGrounded = false;
