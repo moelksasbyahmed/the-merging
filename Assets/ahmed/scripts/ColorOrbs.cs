@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class ColorOrbs : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class ColorOrbs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        color = GetComponent<SpriteRenderer>().color;
+        transform.GetComponent<Light2D>().color = color;
     }
 
     // Update is called once per frame
