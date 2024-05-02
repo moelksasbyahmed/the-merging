@@ -15,6 +15,7 @@ public class Controler : MonoBehaviour
   
         // hearts.less();
         }
+        
 
     }
     public void getCoin()
