@@ -207,6 +207,7 @@ MonoBehaviour:
   maxJumpForce: 1000
   normalJumpForce: 4850
   wallJumpForce: 4500
+  upForceWeaker: 0
   airControlSpeed: 3
   ungrouiidingtime: 0.4
 --- !u!50 &678919571822175414
@@ -322,7 +323,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04876566, y: -0.450144}
+  m_Offset: {x: -0.028564334, y: -0.4400434}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -333,7 +334,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45232487, y: 0.099712014}
+  m_Size: {x: 0.6774237, y: 0.11991322}
   m_EdgeRadius: 0
 --- !u!114 &5855584377446233487
 MonoBehaviour:

@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14327403}
   - component: {fileID: 14327404}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 66552089}
   - component: {fileID: 66552090}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100730814}
   - component: {fileID: 100730815}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173842949}
   - component: {fileID: 173842950}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231035445}
   - component: {fileID: 231035446}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245296494}
   - component: {fileID: 245296495}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree5 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,6 +627,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &246502837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6414343253442986024, guid: 11e5de9f08b27f84fb60321265b401cd, type: 3}
+  m_PrefabInstance: {fileID: 6241257025074822107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &246502841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246502837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da4abe6d2ad674418138523cb96452b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentInter: {fileID: 1480970138}
+  empty: {fileID: 0}
 --- !u!1 &247788852
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 247788853}
   - component: {fileID: 247788854}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332964846}
   - component: {fileID: 332964847}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Table2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +873,7 @@ GameObject:
   - component: {fileID: 353363086}
   - component: {fileID: 353363088}
   - component: {fileID: 353363087}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 382109250}
   - component: {fileID: 382109251}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1091,7 +1110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386745079}
   - component: {fileID: 386745080}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1198,7 @@ GameObject:
   - component: {fileID: 473691943}
   - component: {fileID: 473691942}
   - component: {fileID: 473691941}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: terrain
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -58063,7 +58082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 495356811}
   - component: {fileID: 495356812}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58147,7 +58166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574146668}
   - component: {fileID: 574146669}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone6 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58231,7 +58250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605205521}
   - component: {fileID: 605205522}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58331,7 +58350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650976342}
   - component: {fileID: 650976343}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Table2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58415,7 +58434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 779932729}
   - component: {fileID: 779932730}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58499,7 +58518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816753756}
   - component: {fileID: 816753757}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree8 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58584,7 +58603,7 @@ GameObject:
   - component: {fileID: 871550004}
   - component: {fileID: 871550006}
   - component: {fileID: 871550005}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: decoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62468,7 +62487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7304d14b61c6a4db6a6a3c3cf4eb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 619394803}
   color: {r: 1, g: 0, b: 0.027858734, a: 0}
 --- !u!50 &880742533
 Rigidbody2D:
@@ -62592,12 +62610,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880742530}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.41633528, w: 0.90921116}
-  m_LocalPosition: {x: 6.63, y: 0.22, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.41633528, w: 0.90921116}
+  m_LocalPosition: {x: 1.5550547, y: -0.92133594, z: 0.45628187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1480970139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906778941
 GameObject:
@@ -62609,7 +62627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906778942}
   - component: {fileID: 906778943}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62693,7 +62711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 950320320}
   - component: {fileID: 950320321}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62777,7 +62795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1009723502}
   - component: {fileID: 1009723503}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62861,7 +62879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045003615}
   - component: {fileID: 1045003616}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62945,7 +62963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061647049}
   - component: {fileID: 1061647050}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63029,7 +63047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190076397}
   - component: {fileID: 1190076398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63113,7 +63131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201249419}
   - component: {fileID: 1201249420}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63197,7 +63215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1235404168}
   - component: {fileID: 1235404169}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree8 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63281,7 +63299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317381801}
   - component: {fileID: 1317381802}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63365,7 +63383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1334517263}
   - component: {fileID: 1334517264}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63439,6 +63457,134 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1369917126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1369917127}
+  - component: {fileID: 1369917130}
+  - component: {fileID: 1369917128}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1369917127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369917126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 616146429}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369917128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369917126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
+--- !u!20 &1369917130
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369917126}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 62
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8600000, guid: f3a99629ae6aa7746b001d0f49c35f96, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1394292319
 GameObject:
   m_ObjectHideFlags: 0
@@ -63449,7 +63595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1394292320}
   - component: {fileID: 1394292321}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63533,7 +63679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405917710}
   - component: {fileID: 1405917711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Table2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63617,7 +63763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1415141077}
   - component: {fileID: 1415141078}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63701,7 +63847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426585942}
   - component: {fileID: 1426585943}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63775,6 +63921,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1480970138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480970139}
+  m_Layer: 0
+  m_Name: interactableItems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480970139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480970138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.0749454, y: 1.141336, z: -0.45628187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1932834477}
+  - {fileID: 880742536}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484121778
 GameObject:
   m_ObjectHideFlags: 0
@@ -63785,7 +63964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484121779}
   - component: {fileID: 1484121780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree5 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63869,7 +64048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505276969}
   - component: {fileID: 1505276970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63953,7 +64132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1508489462}
   - component: {fileID: 1508489463}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64037,7 +64216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1555782868}
   - component: {fileID: 1555782869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64125,7 +64304,8 @@ GameObject:
   - component: {fileID: 1610918272}
   - component: {fileID: 1610918271}
   - component: {fileID: 1610918270}
-  m_Layer: 0
+  - component: {fileID: 1610918275}
+  m_Layer: 3
   m_Name: traps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67658,6 +67838,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1610918275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610918268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fd9544fb6435441a51fe1e3f2b43b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642542990
 GameObject:
   m_ObjectHideFlags: 0
@@ -67668,7 +67860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642542991}
   - component: {fileID: 1642542992}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TilePlant12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67752,7 +67944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647259336}
   - component: {fileID: 1647259337}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67836,7 +68028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1666819897}
   - component: {fileID: 1666819898}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67920,7 +68112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689873919}
   - component: {fileID: 1689873920}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67994,6 +68186,149 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1694595324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694595326}
+  - component: {fileID: 1694595325}
+  - component: {fileID: 1694595327}
+  - component: {fileID: 1694595328}
+  m_Layer: 0
+  m_Name: flag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1694595325
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694595324}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 21f539927ba7600428f6943e82518d86, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1694595326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694595324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.48, y: -0.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1694595327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694595324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d77fd7546e8a449aaa5641b486acde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1694595328
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694595324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1716153694
 GameObject:
   m_ObjectHideFlags: 0
@@ -68004,7 +68339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1716153695}
   - component: {fileID: 1716153696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68088,7 +68423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717277232}
   - component: {fileID: 1717277233}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone6 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68172,7 +68507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1739678724}
   - component: {fileID: 1739678725}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone6 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68256,7 +68591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1761128762}
   - component: {fileID: 1761128763}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68340,7 +68675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771039100}
   - component: {fileID: 1771039101}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Table1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68424,7 +68759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816644020}
   - component: {fileID: 1816644021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone6 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68508,7 +68843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892400719}
   - component: {fileID: 1892400720}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68592,7 +68927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900343100}
   - component: {fileID: 1900343101}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68666,6 +69001,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1932834477 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
+  m_PrefabInstance: {fileID: 6380989287699957248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1950017220
 GameObject:
   m_ObjectHideFlags: 0
@@ -68676,7 +69016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950017221}
   - component: {fileID: 1950017222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68760,7 +69100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1954370043}
   - component: {fileID: 1954370044}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plant4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68843,7 +69183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1987724198}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68927,7 +69267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008407091}
   - component: {fileID: 2008407092}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TilePlant11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69011,7 +69351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020466130}
   - component: {fileID: 2020466131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69095,7 +69435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104079549}
   - component: {fileID: 2104079550}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone6 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69179,7 +69519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2109065257}
   - component: {fileID: 2109065258}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Table1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69261,6 +69601,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5287232637926085813, guid: c64a8d87753fedd489e18dbf767ef0af, type: 3}
+      propertyPath: orthographic size
+      value: 5.4375
+      objectReference: {fileID: 0}
     - target: {fileID: 7039158905477758400, guid: c64a8d87753fedd489e18dbf767ef0af, type: 3}
       propertyPath: player
       value: 
@@ -69365,6 +69709,10 @@ PrefabInstance:
     - target: {fileID: 4822466720561247046, guid: 8a723e055595e2f4ea3fe7e5360bf5b2, type: 3}
       propertyPath: m_Name
       value: Global Light 2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822466720561247046, guid: 8a723e055595e2f4ea3fe7e5360bf5b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69484,14 +69832,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1057165345667651594, guid: 11e5de9f08b27f84fb60321265b401cd, type: 3}
+      propertyPath: upForceWeaker
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5164437108984914634, guid: 11e5de9f08b27f84fb60321265b401cd, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 897762456636095556, guid: 11e5de9f08b27f84fb60321265b401cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1369917127}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6414343253442986024, guid: 11e5de9f08b27f84fb60321265b401cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 246502841}
   m_SourcePrefab: {fileID: 100100000, guid: 11e5de9f08b27f84fb60321265b401cd, type: 3}
 --- !u!1001 &6380989287699957248
 PrefabInstance:
@@ -69499,19 +69857,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1480970139}
     m_Modifications:
     - target: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.83
+      value: -5.9049454
       objectReference: {fileID: 0}
     - target: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.26
+      value: -0.881336
       objectReference: {fileID: 0}
     - target: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.45628187
       objectReference: {fileID: 0}
     - target: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69519,11 +69877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 826522616944357209, guid: 070c567e777107c44bf985c3187e4993, type: 3}
       propertyPath: m_LocalRotation.z
@@ -69561,8 +69919,8 @@ SceneRoots:
   - {fileID: 1262846776278134752}
   - {fileID: 2050333299764736120}
   - {fileID: 6241257025074822107}
-  - {fileID: 6380989287699957248}
-  - {fileID: 880742536}
   - {fileID: 4755569277645029244}
   - {fileID: 1987724198}
   - {fileID: 332259792}
+  - {fileID: 1694595326}
+  - {fileID: 1480970139}

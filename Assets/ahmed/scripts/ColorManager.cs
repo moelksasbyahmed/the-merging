@@ -1,14 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class ColorManager : MonoBehaviour
 {
-    [SerializeField] List<Color> CollectedColors;
-    public Light2D light;
+    [SerializeField] public static List<Color> CollectedColors = new List<Color>();
+    [SerializeField] public static List<Color> newCollectedColors = new List<Color>();
+     public new   static Light2D  light;
     // Start is called before the first frame update
     void Start()
     {
+        light = GameObject.Find("Global Light 2D").GetComponent<Light2D>();
 
     }
 
@@ -21,9 +25,27 @@ public class ColorManager : MonoBehaviour
 
 
     }
+    public static  void resetColors()
+    {
+        light.color = Color.black;
+        Color[] x = new Color[CollectedColors.Count];
+        CollectedColors.CopyTo(x);
+        newCollectedColors = x.ToList();
+        Debug.Log(CollectedColors.Count);
+        Debug.Log(newCollectedColors.Count);
+        CollectedColors.Clear();
+        Debug.Log(CollectedColors.Count);
+        foreach(Color color in newCollectedColors)
+        {
+            Debug.Log(color);
+            newColor(color);
+
+        }
+        newCollectedColors.Clear();
+    }
 
 
-    public    void newColor(Color color)
+    public static    void newColor(Color color)
     {
         if (CollectedColors.Count <= 6)
         {

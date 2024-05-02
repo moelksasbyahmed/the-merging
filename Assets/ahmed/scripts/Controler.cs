@@ -8,7 +8,13 @@ public class Controler : MonoBehaviour
     public void damaged()
     {
         Debug.Log("damaged");
+        if(CheckPoint.lastCheckPoint != null)
+        {
+
+            transform.position = CheckPoint.lastCheckPoint.transform.position + new Vector3 { x = 2 };
+  
         // hearts.less();
+        }
 
     }
     public void getCoin()

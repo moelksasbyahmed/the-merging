@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class ColorOrbs : MonoBehaviour
+public class CheckPoint : MonoBehaviour
 {
+    public static GameObject lastCheckPoint;
 
-    public Color color;
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
@@ -17,13 +19,12 @@ public class ColorOrbs : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.collider.CompareTag("Player")) 
+        if(collision.CompareTag("Player"))
         {
-            ColorManager.newColor(color);
-            Destroy(gameObject);
-            
+            lastCheckPoint = this.gameObject;
+           
         }
     }
 }
