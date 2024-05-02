@@ -116,6 +116,10 @@ public class Controler : MonoBehaviour
     {
         if (alive)
         {
+            if(transform.position.y < -45f)
+            {
+                damaged();
+            }
             handleWallJump();
             uppdateScale();
          //   checkGrounded();
