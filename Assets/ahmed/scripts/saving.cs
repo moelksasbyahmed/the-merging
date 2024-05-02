@@ -20,35 +20,35 @@ public class saving : ScriptableObject
     //        // Get the component using reflection
     //        Component component = GetComponent(componentType);
 
-    //    }
-    //}
-    public static void save(GameObject gameobject, GameObject empty)
-    {
-       GameObject nw = Instantiate(empty);
-        Component[] components = gameobject.GetComponents(typeof(Component));
-        foreach (Component component in components)
-        {
-            Debug.Log(component.ToString());
-            if (nw.GetComponent(component.GetType()) == null)
-            {
-            Component newComponent =     nw.AddComponent(component.GetType());
-                dynamic x = gameobject.GetComponent(component.GetType());
-                Debug.Log( x.isTrigger);
-                //this is working u can get the properities by its names from the original component then save it, then load it again and do the reverse to aplply the properities and u can use (dynamic properity fitcher ) o get all the properities
-            }
-            else
-            {
-                Debug.Log("f;u");
-            }
+    ////    }
+    ////}
+    //public static void save(GameObject gameobject, GameObject empty)
+    //{
+    //   GameObject nw = Instantiate(empty);
+    //    Component[] components = gameobject.GetComponents(typeof(Component));
+    //    foreach (Component component in components)
+    //    {
+    //        Debug.Log(component.ToString());
+    //        if (nw.GetComponent(component.GetType()) == null)
+    //        {
+    //        Component newComponent =     nw.AddComponent(component.GetType());
+    //            dynamic x = gameobject.GetComponent(component.GetType());
+    //            Debug.Log( x.isTrigger);
+    //            //this is working u can get the properities by its names from the original component then save it, then load it again and do the reverse to aplply the properities and u can use (dynamic properity fitcher ) o get all the properities
+    //        }
+    //        else
+    //        {
+    //            Debug.Log("f;u");
+    //        }
             
-        }
+    //    }
 
-    }
+    //}
 }
 
-struct instance
-{
-    public string name;
-    public List<dynamic> Components;
-    public List<instance> childs;
-}
+//struct instance
+//{
+//    public string name;
+//    public List<dynamic> Components;
+//    public List<instance> childs;
+//}
