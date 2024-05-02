@@ -3,6 +3,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class ColorManager : MonoBehaviour
 {
@@ -56,6 +57,8 @@ public class ColorManager : MonoBehaviour
         else
         {
             light.color = Color.white;
+            SceneManager.LoadScene(4,LoadSceneMode.Additive);
+            GameObject.Find("Player").GetComponent<Controler>().alive = false;
         }
 
     }

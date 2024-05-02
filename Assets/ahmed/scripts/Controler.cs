@@ -41,7 +41,7 @@ public class Controler : MonoBehaviour
         }
 
     }
-    bool alive = true;
+  public  bool alive = true;
     //   public GameObject dieScreen;
     public void death()
     {

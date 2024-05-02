@@ -10,6 +10,10 @@ public class menu : MonoBehaviour
         SceneManager.LoadSceneAsync(1,LoadSceneMode.Additive);
         SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
     }
+    public void main()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void quit()
     {
          Application.Quit();
