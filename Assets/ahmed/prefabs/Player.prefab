@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe55962a5c66f204cabc01dc43d1c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadPlayer: {fileID: 2373765489851998298, guid: e33d834bf16a14a4b96d8854e0d335bc, type: 3}
   alive: 1
   walkSpeed: 5
   runSpeed: 10

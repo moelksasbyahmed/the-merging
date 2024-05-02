@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ahmed/scenes/UI.unity
     guid: 43566f83b6aae034eaf23e56083e2c81
+  - enabled: 1
+    path: Assets/WON.unity
+    guid: 94a0623b72c14f545aa30f04af57b785
   m_configObjects: {}

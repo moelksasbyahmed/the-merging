@@ -4,12 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class Controler : MonoBehaviour
 {
-
+    public static int deathTimes = 0;
+    public GameObject deadPlayer;
     public void damaged()
     {
         Debug.Log("damaged");
         if(CheckPoint.lastCheckPoint != null)
         {
+            Instantiate(deadPlayer,transform.position - new Vector3 { y = 0.5f}, transform.rotation);
+            deathTimes++;
 
             transform.position = CheckPoint.lastCheckPoint.transform.position + new Vector3 { x = 2 };
   
