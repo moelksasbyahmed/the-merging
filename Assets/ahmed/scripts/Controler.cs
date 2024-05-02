@@ -15,6 +15,7 @@ public class Controler : MonoBehaviour
   
         // hearts.less();
         }
+        
 
     }
     public void getCoin()
@@ -116,6 +117,10 @@ public class Controler : MonoBehaviour
     {
         if (alive)
         {
+            if(transform.position.y < -45f)
+            {
+                damaged();
+            }
             handleWallJump();
             uppdateScale();
          //   checkGrounded();

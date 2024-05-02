@@ -331,13 +331,13 @@ MonoBehaviour:
   maxJumpHoldTime: 1
   head: {fileID: 0}
   rotationSpeed: 10
-  isGrounded: 1
+  isGrounded: 0
   minJumpForce: 300
   maxJumpForce: 1000
-  normalJumpForce: 4850
+  normalJumpForce: 5152
   wallJumpForce: 4500
   upForceWeaker: 0.8
-  airControlSpeed: 3
+  airControlSpeed: 5
   ungrouiidingtime: 0.4
 --- !u!50 &678919571822175414
 Rigidbody2D:
@@ -398,7 +398,6 @@ GameObject:
   - component: {fileID: 589442760861468789}
   - component: {fileID: 7581361763953511847}
   - component: {fileID: 5855584377446233487}
-  - component: {fileID: 8469157262765383934}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Player
@@ -478,20 +477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db619093ff0f218428d3dc3e9ef4625c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8469157262765383934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6414343253442986024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da4abe6d2ad674418138523cb96452b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentInter: {fileID: 0}
-  empty: {fileID: 0}
 --- !u!1 &6834847587543046586
 GameObject:
   m_ObjectHideFlags: 0
