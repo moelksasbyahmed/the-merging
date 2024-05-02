@@ -47,7 +47,7 @@ public class movingGround : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            collision.collider.transform.parent = transform;
+            collision.collider.transform.parent.parent = transform;
         }
 
     }
@@ -56,7 +56,7 @@ public class movingGround : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            collision.collider.transform.parent = null;
+            collision.collider.transform.parent.parent = null;
         }
 
     }
