@@ -125,7 +125,7 @@ public class Controler : MonoBehaviour
                 damaged();
             }
             handleWallJump();
-            uppdateScale();
+           // uppdateScale();
          //   checkGrounded();
 
             // fire();
@@ -169,7 +169,7 @@ public class Controler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) &&  /*&& canJump*/  isGrounded)
         {
            
-           
+           isGrounded = false;
                 rb.AddForce(Vector2.up * normalJumpForce);
 
             
@@ -215,6 +215,7 @@ public class Controler : MonoBehaviour
     {
         if (!isGrounded && Input.GetKeyDown(KeyCode.Space) && GetComponentInChildren<wallJump>().walljumpAvailable)
         {
+            GetComponentInChildren<wallJump>().walljumpAvailable = false;
             rb.velocity = Vector2.zero;
             rb.AddForce((new Vector3 { x = GetComponentInChildren<wallJump>().direction } * wallJumpForce) + (Vector3.up * wallJumpForce * upForceWeaker));
         }
@@ -265,6 +266,7 @@ public class Controler : MonoBehaviour
     private void HandleMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
+        transform.localScale = new Vector3 { x = Mathf.Sign(horizontalInput), y = 1f, z = 1f };
         float speed = (Input.GetKey(KeyCode.LeftShift) && isGrounded) ? runSpeed :(isGrounded)? walkSpeed:airControlSpeed;
         Vector2 movement = new Vector2(horizontalInput * speed, rb.velocity.y);
 
@@ -282,7 +284,10 @@ public class Controler : MonoBehaviour
 
     void uppdateScale()
     {
+        
+
         transform.localScale = new Vector3 { x = Mathf.Sign(rb.velocity.x) * 1f, y = 1f, z = 1f };
+        
     }
 
 
