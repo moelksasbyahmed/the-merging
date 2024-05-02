@@ -335,9 +335,9 @@ MonoBehaviour:
   minJumpForce: 300
   maxJumpForce: 1000
   normalJumpForce: 5152
-  wallJumpForce: 4500
+  wallJumpForce: 5500
   upForceWeaker: 0.8
-  airControlSpeed: 5
+  airControlSpeed: 4
   ungrouiidingtime: 0.4
 --- !u!50 &678919571822175414
 Rigidbody2D:
