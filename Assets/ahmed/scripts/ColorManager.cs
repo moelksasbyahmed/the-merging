@@ -31,6 +31,10 @@ public class ColorManager : MonoBehaviour
             CollectedColors.Add(color);
             light.color = Color.Lerp(light.color, color, 0.5f);
         }
+        else
+        {
+            light.color = Color.white;
+        }
 
     }
 
