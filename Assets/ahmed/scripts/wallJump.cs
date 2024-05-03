@@ -6,7 +6,8 @@ public class wallJump : MonoBehaviour
 {
     public float direction;
    public bool walljumpAvailable;
-
+    public Animator animator;
+    
 
 
     bool left = false;
@@ -16,6 +17,8 @@ public class wallJump : MonoBehaviour
     {
         if (collision.collider.CompareTag("ground"))
         {
+            animator.SetBool("wallkumpAvailable", true);
+
             left = false;
             RaycastHit2D hit;
             if(Physics2D.RaycastAll(transform.position,Vector3.right,2f).Length > 1)
@@ -37,6 +40,8 @@ public class wallJump : MonoBehaviour
     {
         if (collision.collider.CompareTag("ground"))
         {
+            animator.SetBool("wallkumpAvailable", false);
+
             time = Time.time;
             left = true;
 
@@ -52,6 +57,7 @@ public class wallJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (left && Time.time - time >= delaytime)
         {
             left = false;

@@ -104,8 +104,10 @@ public class Controler : MonoBehaviour
        }
        */
     // manageHealth hearts;
+    wallJump walljump;
     private void Start()
     {
+        walljump = GetComponentInChildren<wallJump>();
         //  hearts = GameObject.Find("heart zone").GetComponent<manageHealth>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -120,6 +122,7 @@ public class Controler : MonoBehaviour
     {
         if (alive)
         {
+           
             if(transform.position.y < -45f)
             {
                 damaged();
@@ -207,17 +210,16 @@ public class Controler : MonoBehaviour
             }
         }
     }
-
     public float wallJumpForce;
   [Tooltip("1 for the up foce to be fully there, 0 for the force o be only horizontal")]
     public float upForceWeaker;
     void handleWallJump()
     {
-        if (!isGrounded && Input.GetKeyDown(KeyCode.Space) && GetComponentInChildren<wallJump>().walljumpAvailable)
+        if (!isGrounded && Input.GetKeyDown(KeyCode.Space) && walljump.walljumpAvailable)
         {
-            GetComponentInChildren<wallJump>().walljumpAvailable = false;
+            walljump.walljumpAvailable = false;
             rb.velocity = Vector2.zero;
-            rb.AddForce((new Vector3 { x = GetComponentInChildren<wallJump>().direction } * wallJumpForce) + (Vector3.up * wallJumpForce * upForceWeaker));
+            rb.AddForce((new Vector3 { x = walljump.direction } * wallJumpForce) + (Vector3.up * wallJumpForce * upForceWeaker));
         }
     }
 
@@ -266,7 +268,11 @@ public class Controler : MonoBehaviour
     private void HandleMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
+        if(!Mathf.Approximately(horizontalInput , 0f))
+        {
+
         transform.localScale = new Vector3 { x = Mathf.Sign(horizontalInput), y = 1f, z = 1f };
+        }
         float speed = (Input.GetKey(KeyCode.LeftShift) && isGrounded) ? runSpeed :(isGrounded)? walkSpeed:airControlSpeed;
         Vector2 movement = new Vector2(horizontalInput * speed, rb.velocity.y);
 

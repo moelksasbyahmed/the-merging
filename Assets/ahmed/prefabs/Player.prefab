@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 171284291983326609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.8}
+  m_LocalPosition: {x: 0, y: 0.07, z: -0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66,7 +66,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 62
+  field of view: 53.8
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2230259986126610481}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 10377eff89fa2574983af7beadecdc44, type: 2}
+  m_Material: {fileID: 6200000, guid: 0ae537284acd4974186abbee425fefd8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -220,6 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 0
   walljumpAvailable: 0
+  animator: {fileID: 4721285354931031126}
+  delaytime: 0.5
 --- !u!1 &5164437108984914634
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +340,7 @@ MonoBehaviour:
   maxJumpForce: 1000
   normalJumpForce: 5152
   wallJumpForce: 5500
-  upForceWeaker: 0.8
+  upForceWeaker: 1
   airControlSpeed: 5
   ungrouiidingtime: 0.4
 --- !u!50 &678919571822175414
@@ -357,7 +359,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: 10377eff89fa2574983af7beadecdc44, type: 2}
+  m_Material: {fileID: 6200000, guid: 0ae537284acd4974186abbee425fefd8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -479,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db619093ff0f218428d3dc3e9ef4625c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delaytime: 0.5
 --- !u!1 &6834847587543046586
 GameObject:
   m_ObjectHideFlags: 0

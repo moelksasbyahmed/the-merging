@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: sd1
+    uniqueID: 1923481735
+    locked: 0

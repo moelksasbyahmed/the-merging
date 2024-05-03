@@ -16,11 +16,11 @@ public class ColorManager : MonoBehaviour
         light = GameObject.Find("Global Light 2D").GetComponent<Light2D>();
 
     }
-
+    public int collected;
     // Update is called once per frame
     void Update()
     {
-
+        collected = CollectedColors.Count;
 
 
 
@@ -48,17 +48,18 @@ public class ColorManager : MonoBehaviour
 
     public static    void newColor(Color color)
     {
+        GameObject.Find("ColorZonee").GetComponent<colorUi>().add(color);
+            CollectedColors.Add(color);
         if (CollectedColors.Count <= 6)
         {
 
-            CollectedColors.Add(color);
-            light.color = Color.Lerp(light.color, color, 0.5f);
+            light.color = Color.Lerp(light.color, color, 0.5f); 
         }
         else
         {
             light.color = Color.white;
             SceneManager.LoadScene(4,LoadSceneMode.Additive);
-            GameObject.Find("Player").GetComponent<Controler>().alive = false;
+            Time.timeScale = 0f ;
         }
 
     }
