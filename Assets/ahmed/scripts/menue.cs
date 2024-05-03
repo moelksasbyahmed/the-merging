@@ -25,10 +25,14 @@ public class menue : MonoBehaviour
 
     }
     public TextMeshProUGUI mutetext;
+    bool wanttoMain = false;
     public void main()
     {
+        wanttoMain = true;
+        time = Time.time;
         start();
-        SceneManager.LoadScene(0);
+
+
 
     }
     bool muted = false;
@@ -51,10 +55,13 @@ public class menue : MonoBehaviour
         }
 
     }
+    float time;
+    bool wanttoquit = false;
     public void quit()
     {
-        start();
-        Application.Quit();
+        wanttoquit = true;
+        time = Time.time;
+
     }
 
     // Start is called before the first frame update
@@ -71,7 +78,29 @@ public class menue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !paused)
+        if (wanttoMain)
+        {
+            if (Time.time - time >= 1f)
+            {
+                SceneManager.LoadScene(0);
+
+            }
+        }
+
+        if (wanttoquit)
+        {
+            if (Time.time - time >= 1f)
+            {
+
+                start();
+                Application.Quit();
+
+
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !paused)
         {
             Time.timeScale = 0.0f;
             oa.SetActive(true);

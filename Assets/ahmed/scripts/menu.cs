@@ -29,14 +29,15 @@ public class menu : MonoBehaviour
 
     }
 
-
+    bool wanttoStart= false;
+    bool wanttoquit = false;
 
     public void start()
     {
-        SceneManager.LoadSceneAsync(3);
-  
-        SceneManager.LoadSceneAsync(1,LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+        wanttoStart = true;
+        time = Time.time;
+
+       
     }
     public void main()
     {
@@ -44,18 +45,44 @@ public class menu : MonoBehaviour
     }
     public void quit()
     {
-         Application.Quit();
+        wanttoquit = true;
+        time = Time.time;
+
     }
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    float time;
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.loadedSceneCount >1)
+        if(wanttoStart)
+        {
+            if(Time.time - time >= 2.6f)
+            {
+                SceneManager.LoadSceneAsync(3);
+
+                SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+                SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+
+            }
+        }
+
+        if (wanttoquit)
+        {
+            if (Time.time - time >= 2.6f)
+            {
+                Application.Quit();
+
+
+            }
+        }
+
+
+
+        if (SceneManager.loadedSceneCount >1)
         {
             SceneManager.UnloadSceneAsync(3);
         }

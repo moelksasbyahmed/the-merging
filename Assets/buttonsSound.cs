@@ -7,7 +7,6 @@ public class buttonsSound : MonoBehaviour
     
     public void startButton()
     {
-        DontDestroyOnLoad(gameObject);
         GetComponent<AudioSource>().Play();
     }
     public void normalButton()
