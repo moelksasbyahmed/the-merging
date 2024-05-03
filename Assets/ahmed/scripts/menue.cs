@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class menue : MonoBehaviour
 {
@@ -22,10 +24,31 @@ public class menue : MonoBehaviour
         notice.SetActive(false);
 
     }
+    public TextMeshProUGUI mutetext;
     public void main()
     {
         start();
         SceneManager.LoadScene(0);
+
+    }
+    bool muted = false;
+    public void muteMusic()
+    {
+        if(muted)
+        {
+            GameObject.Find("Player").GetComponent<AudioSource>().mute = false;
+            mutetext.text = "mute music";
+            muted = false;
+
+        }
+        else
+        {
+        GameObject.Find("Player").GetComponent<AudioSource>().mute = true;
+            mutetext.text = "unmute music";
+            muted = true;
+
+
+        }
 
     }
     public void quit()

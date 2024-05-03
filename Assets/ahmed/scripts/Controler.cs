@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Controler : MonoBehaviour
 {
+    public AudioSource jump;
+    public AudioSource die;
     public static int deathTimes = 0;
     public GameObject deadPlayer;
     public void damaged()
@@ -11,6 +13,7 @@ public class Controler : MonoBehaviour
         Debug.Log("damaged");
         if(CheckPoint.lastCheckPoint != null)
         {
+            die.Play();
             Instantiate(deadPlayer,transform.position - new Vector3 { y = 0.5f}, transform.rotation);
             deathTimes++;
 
@@ -171,8 +174,10 @@ public class Controler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) &&  /*&& canJump*/  isGrounded)
         {
-           
-           isGrounded = false;
+            jump.Play();
+
+
+            isGrounded = false;
                 rb.AddForce(Vector2.up * normalJumpForce);
 
             
@@ -217,6 +222,7 @@ public class Controler : MonoBehaviour
     {
         if (!isGrounded && Input.GetKeyDown(KeyCode.Space) && walljump.walljumpAvailable)
         {
+            jump.Play();
             walljump.walljumpAvailable = false;
             rb.velocity = Vector2.zero;
             rb.AddForce((new Vector3 { x = walljump.direction } * wallJumpForce) + (Vector3.up * wallJumpForce * upForceWeaker));

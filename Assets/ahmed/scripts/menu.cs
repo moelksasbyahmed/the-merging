@@ -1,10 +1,36 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class menu : MonoBehaviour
 {
-   
+
+    bool muted = false;
+    public TextMeshProUGUI mutetext;
+
+    public void muteMusic()
+    {
+        if (muted)
+        {
+            GetComponent<AudioSource>().mute = false;
+            mutetext.text = "mute music";
+            muted = false;
+
+        }
+        else
+        {
+            GetComponent<AudioSource>().mute = true;
+            mutetext.text = "unmute music";
+            muted = true;
+
+
+        }
+
+    }
+
+
+
     public void start()
     {
         SceneManager.LoadSceneAsync(3);
