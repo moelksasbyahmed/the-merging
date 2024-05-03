@@ -7,11 +7,19 @@ public class menue : MonoBehaviour
 {
 
     public GameObject oa;
+    public GameObject notice;
     public void start()
     {
         Time.timeScale = 1.0f;
         paused = false;
         oa.SetActive(false);
+
+    }
+    public void ok()
+    {
+        Time.timeScale = 1.0f;
+        paused = false;
+        notice.SetActive(false);
 
     }
     public void main()
@@ -29,7 +37,11 @@ public class menue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 0f;
+        paused = true;
+        notice.SetActive(true);
+
+
     }
     bool paused = false;
 
