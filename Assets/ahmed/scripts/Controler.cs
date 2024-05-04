@@ -7,6 +7,7 @@ public class Controler : MonoBehaviour
     public AudioSource jump;
     public AudioSource die;
     public static int deathTimes = 0;
+    public static bool newSave = true;
     public GameObject deadPlayer;
     public void damaged()
     {
@@ -382,7 +383,6 @@ public class Controler : MonoBehaviour
             isGrounded = false;
 
     }
-  
 
 
 }

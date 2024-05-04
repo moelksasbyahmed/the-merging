@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class menue : MonoBehaviour
 {
-
+    loadManager lm;
     public GameObject oa;
     public GameObject notice;
     public void start()
@@ -15,6 +15,7 @@ public class menue : MonoBehaviour
         Time.timeScale = 1.0f;
         paused = false;
         oa.SetActive(false);
+      
 
     }
     public void ok()
@@ -22,12 +23,34 @@ public class menue : MonoBehaviour
         Time.timeScale = 1.0f;
         paused = false;
         notice.SetActive(false);
+        Controler.newSave = false;
+
+    }
+    public bool wantToRestart=false;
+    public void restart()
+    {
+        Controler.newSave = true;
+        lm.savee();
+        wantToRestart = true;
+        Time.timeScale = 1.0f;
+        paused = false;
+
+    }
+
+
+    public void reloadLast()
+    {
+       
+        wantToRestart = true;
+        Time.timeScale = 1.0f;
+        paused = false;
 
     }
     public TextMeshProUGUI mutetext;
     bool wanttoMain = false;
     public void main()
     {
+       
         wanttoMain = true;
         time = Time.time;
         start();
@@ -59,18 +82,49 @@ public class menue : MonoBehaviour
     bool wanttoquit = false;
     public void quit()
     {
+      
+        start();
         wanttoquit = true;
         time = Time.time;
 
     }
+    bool done = false;
+    private void Awake()
+    {
+            notice.SetActive(false);
 
+    }
     // Start is called before the first frame update
     void Start()
     {
+
+        try
+        {
+
+        lm = GameObject.Find("EventSystem").GetComponent<loadManager>();
+            done = true;
+        }
+        catch
+        {
+            done = false;
+        }
+        
+        notice.SetActive(false);
+
+        if (Controler.newSave)
+        {
         Time.timeScale = 0f;
         paused = true;
-        notice.SetActive(true);
 
+            notice.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            paused = false
+                ;
+            notice.SetActive(false);
+        }
 
     }
     bool paused = false;
@@ -78,6 +132,20 @@ public class menue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!done)
+        {
+            try
+            {
+
+                lm = GameObject.Find("EventSystem").GetComponent<loadManager>();
+                done = true;
+            }
+            catch
+            {
+                done = false;
+            }
+
+        }
         if (wanttoMain)
         {
             if (Time.time - time >= 1f)
@@ -89,7 +157,7 @@ public class menue : MonoBehaviour
 
         if (wanttoquit)
         {
-            if (Time.time - time >= 1f)
+            if (Time.time - time >= 0.8f)
             {
 
                 start();
@@ -98,6 +166,21 @@ public class menue : MonoBehaviour
 
             }
         }
+
+        if (wantToRestart)
+        {
+            if (Time.time - time >= 0.8f)
+            {
+
+                SceneManager.LoadSceneAsync(3);
+                SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+
+                SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+
+
+            }
+        }
+
 
 
         if (Input.GetKeyDown(KeyCode.Escape) && !paused)

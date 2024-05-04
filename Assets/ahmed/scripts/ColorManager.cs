@@ -44,11 +44,13 @@ public class ColorManager : MonoBehaviour
         }
         newCollectedColors.Clear();
     }
+    public static bool finished = false;
 
-
+    public finish end;
     public static    void newColor(Color color)
     {
         GameObject.Find("ColorZonee").GetComponent<colorUi>().add(color);
+        
             CollectedColors.Add(color);
         if (CollectedColors.Count <= 6)
         {
@@ -57,9 +59,10 @@ public class ColorManager : MonoBehaviour
         }
         else
         {
+            finished = true;
             light.color = Color.white;
-            SceneManager.LoadScene(4,LoadSceneMode.Additive);
-            Time.timeScale = 0f ;
+           
+           
         }
 
     }

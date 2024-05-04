@@ -10,8 +10,7 @@ public class CheckPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        
+        time = Time.time;
     }
 
     // Update is called once per frame
@@ -19,11 +18,19 @@ public class CheckPoint : MonoBehaviour
     {
         
     }
+    bool done = false;
+    float time;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && !done)
         {
+            if(Time.time-time >= 1) {
+
+            done = true;
             lastCheckPoint = this.gameObject;
+            GameObject.Find("EventSystem").GetComponent<loadManager>().savee();
+            Debug.Log("ok it saved?");
+            }
            
         }
     }

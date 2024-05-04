@@ -1,3 +1,4 @@
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +32,24 @@ public class menu : MonoBehaviour
 
     bool wanttoStart= false;
     bool wanttoquit = false;
+    public void newGame()
+    {
+        wanttoStart = true;
+        time = Time.time;
+
+
+
+        pp obj = new pp();
+        obj.newSave = true;
+
+        string json = JsonUtility.ToJson(obj);
+
+
+
+        File.WriteAllText(Path.Combine(Application.dataPath, "Resources/" + "saves.txt"), json);
+
+
+    }
 
     public void start()
     {
@@ -63,8 +82,8 @@ public class menu : MonoBehaviour
             if(Time.time - time >= 2.6f)
             {
                 SceneManager.LoadSceneAsync(3);
-
                 SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+
                 SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
 
             }
@@ -79,7 +98,7 @@ public class menu : MonoBehaviour
 
             }
         }
-
+      
 
 
         if (SceneManager.loadedSceneCount >1)
