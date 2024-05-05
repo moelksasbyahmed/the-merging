@@ -18,17 +18,17 @@ public class CheckPoint : MonoBehaviour
     {
         
     }
-    bool done = false;
+
     float time;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") && !done)
+        if(collision.CompareTag("Player") )
         {
             if(Time.time-time >= 1) {
 
-            done = true;
+           
             lastCheckPoint = this.gameObject;
-            GameObject.Find("EventSystem").GetComponent<loadManager>().savee();
+            GameObject.Find("EventSystem").GetComponent<loadManager>().savee(gameObject.name);
             Debug.Log("ok it saved?");
             }
            

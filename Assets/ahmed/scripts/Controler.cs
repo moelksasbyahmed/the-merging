@@ -9,13 +9,14 @@ public class Controler : MonoBehaviour
     public static int deathTimes = 0;
     public static bool newSave = true;
     public GameObject deadPlayer;
+    public Transform corpsesParent;
     public void damaged()
     {
         Debug.Log("damaged");
         if(CheckPoint.lastCheckPoint != null)
         {
             die.Play();
-            Instantiate(deadPlayer,transform.position - new Vector3 { y = 0.5f}, transform.rotation);
+            Instantiate(deadPlayer,transform.position - new Vector3 { y = 0.5f}, transform.rotation,corpsesParent);
             deathTimes++;
 
             transform.position = CheckPoint.lastCheckPoint.transform.position + new Vector3 { x = 2 };

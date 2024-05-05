@@ -1,1 +1,0 @@
-{"position":{"x":6.91654109954834,"y":-0.5120413899421692,"z":0.0},"childNumber":6,"deathNumber":0,"newSave":false,"child":[6,5,4,3,2,1]}

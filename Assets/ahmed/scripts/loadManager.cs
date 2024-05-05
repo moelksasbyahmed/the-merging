@@ -12,17 +12,16 @@ public class loadManager : MonoBehaviour
     //  public  GameObject colorOrbs;
     public GameObject player;
     //public CheckPoint lastCheck;
-
+    
+    
     private void Start()
     {
         try
         {
-            load();
-            if (!Controler.newSave)
-            {
-
+         
                 saving.realLoad(GameObject.Find("color orbs"), colorOrbs_prefab, player);
-            }
+
+            
         }
         catch (Exception e)
         {
@@ -33,27 +32,20 @@ public class loadManager : MonoBehaviour
     }
     public void loade()
     {
-        saving.realLoad(GameObject.Find("color orbs"), colorOrbs_prefab, player);
+       // saving.realLoad(GameObject.Find("color orbs"), colorOrbs_prefab, player);
 
 
 
     }
-    public void savee()
+    public void savee(string checkName)
     {
-        saving.realSave(GameObject.Find("color orbs"), player);
+        saving.realSave(GameObject.Find("color orbs"), player,checkName);
 
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.L))
-        {
-            load();
-        }
-        if (Input.GetKeyUp(KeyCode.O))
-        {
-            saving.realSave(GameObject.Find("color orbs"), player);
-            // saving.save();
-        }
+     
+       
     }
 
     public void save()
@@ -79,11 +71,28 @@ public class loadManager : MonoBehaviour
 
         //  Debug.Log("Serialized Result: true");
     }
-    public static void load()
+    public static void load(GameObject colorOrbs_prefab)
     {
         pp obj = new pp();
         obj = JsonUtility.FromJson<pp>(File.ReadAllText(Path.Combine(Application.dataPath, "Resources/" + "saves.txt")));
+        
+        GameObject x = Instantiate(colorOrbs_prefab);
+        x.name = "color orbs";
         Controler.newSave = obj.newSave;
+        ColorManager.CollectedColors.Clear();
+        ColorManager.newCollectedColors.Clear();
+      //  ColorManager.lighte.color = Color.black;//some bug in this area
+        for (int i = 0; i < 7; i++)
+        {
+            if (!obj.child.Exists(item => item == i))
+            {
+                ColorManager.newColor(x.transform.GetChild(7 - i - 1).GetComponent<SpriteRenderer>().color);
+                Debug.Log("added " + x.transform.GetChild(7 - i - 1).GetComponent<SpriteRenderer>().color);
+                Destroy(x.transform.GetChild(7 - i - 1).gameObject);
+
+            }
+
+        }
         Debug.Log(obj.newSave);
 
 

@@ -9,11 +9,10 @@ public class ColorManager : MonoBehaviour
 {
     [SerializeField] public static List<Color> CollectedColors = new List<Color>();
     [SerializeField] public static List<Color> newCollectedColors = new List<Color>();
-     public new   static Light2D  light;
+   
     // Start is called before the first frame update
     void Start()
     {
-        light = GameObject.Find("Global Light 2D").GetComponent<Light2D>();
 
     }
     public int collected;
@@ -28,7 +27,7 @@ public class ColorManager : MonoBehaviour
     }
     public static  void resetColors()
     {
-        light.color = Color.black;
+        GameObject.Find("Global Light 2D").GetComponent<Light2D>().color = Color.black;
         Color[] x = new Color[CollectedColors.Count];
         CollectedColors.CopyTo(x);
         newCollectedColors = x.ToList();
@@ -50,17 +49,20 @@ public class ColorManager : MonoBehaviour
     public static    void newColor(Color color)
     {
         GameObject.Find("ColorZonee").GetComponent<colorUi>().add(color);
-        
+        Debug.Log("in the new Color function");
             CollectedColors.Add(color);
         if (CollectedColors.Count <= 6)
         {
 
-            light.color = Color.Lerp(light.color, color, 0.5f); 
+            GameObject.Find("Global Light 2D").GetComponent<Light2D>().color = Color.Lerp(GameObject.Find("Global Light 2D").GetComponent<Light2D>().color, color, 0.5f);
+
+            Debug.Log("changed light color to " + color);
+            Debug.Log("changed light color to " + color);
         }
         else
         {
             finished = true;
-            light.color = Color.white;
+            GameObject.Find("Global Light 2D").GetComponent<Light2D>().color = Color.white;
            
            
         }

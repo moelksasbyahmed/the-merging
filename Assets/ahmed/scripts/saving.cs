@@ -53,7 +53,7 @@ public class saving : ScriptableObject
     
    static int   numberOfChilds;
     static List<int> childs = new List<int>();
-    public static  void realSave(GameObject colorOrbs,GameObject player)
+    public static  void realSave(GameObject colorOrbs,GameObject player,string chechName)
     {
         childs.Clear();
         numberOfChilds = colorOrbs.transform.childCount;
@@ -64,9 +64,23 @@ public class saving : ScriptableObject
         pp obj = new pp();
         obj.childNumber = numberOfChilds;
         obj.child = childs;
-        obj.position = player.transform.position + new Vector3 { x = 2f};
+        obj.position = player.transform.position ;
         obj.deathNumber = Controler.deathTimes;
         obj.newSave = Controler.newSave;
+        obj.checkName = chechName;
+        obj.numberOfCorpses = GameObject.Find("corpses").transform.childCount;
+
+
+        for (int i = 0; i < obj.numberOfCorpses; i++)
+        {
+            obj.corpsPositions.Add(GameObject.Find("corpses").transform.GetChild(i).position);
+
+
+        }
+
+
+
+        Debug.Log("saved this in the file" + obj.newSave + "and this the real value" + Controler.newSave);
         string json =  JsonUtility.ToJson(obj);
 
 
@@ -75,26 +89,38 @@ public class saving : ScriptableObject
 
 
     }
-     
-    
+
+    public GameObject prefab;
    public static void realLoad(GameObject colorOrbs,GameObject colorOrbs_prefab, GameObject player)
     {
         pp obj = new pp();
         obj = JsonUtility.FromJson<pp>(File.ReadAllText(Path.Combine(Application.dataPath, "Resources/" + "saves.txt")));
+        GameObject tewmp = player.GetComponent<Controler>().deadPlayer;
+        Transform parent = GameObject.Find("corpses").transform;
+        for (int i = 0; i < obj.numberOfCorpses; i++)
+        {
+            Instantiate(tewmp, obj.corpsPositions[i],parent.rotation, parent);
+            
+
+        }
+
+
         player.transform.position = obj.position;
         Controler.deathTimes = obj.deathNumber;
         Controler.newSave = obj.newSave;
-        Destroy(GameObject.Find("color orbs").gameObject);
+        CheckPoint.lastCheckPoint = GameObject.Find(obj.checkName);
       GameObject x =  Instantiate(colorOrbs_prefab);
         x.name = "color orbs";
         ColorManager.CollectedColors.Clear();
         ColorManager.newCollectedColors.Clear();
-        ColorManager.light.color = Color.black;//some bug in this area
+       // ColorManager.lighte.color = Color.black;//some bug in this area
         for (int i = 0;i <7;i++)
         {
             if(!obj.child.Exists(item => item == i))
             {
+                Debug.Log("int the loop to add colors" + i);
                 ColorManager.newColor(x.transform.GetChild(7-i-1).GetComponent<SpriteRenderer>().color);
+                Debug.Log("added "+ x.transform.GetChild(7 - i - 1).GetComponent<SpriteRenderer>().color);
                 Destroy(x.transform.GetChild(7 - i -1).gameObject);
 
             }
@@ -134,10 +160,12 @@ class pp
     public int childNumber;
     public int deathNumber;
     public bool newSave;
+    public string checkName;
    public List<int> child;
 
 
-
+    public int numberOfCorpses;
+    public List<Vector3> corpsPositions = new List<Vector3>();
 
 
 }

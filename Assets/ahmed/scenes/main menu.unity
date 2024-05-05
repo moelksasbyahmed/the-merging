@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mutetext: {fileID: 0}
+  Continuebutton: {fileID: 2078250841}
 --- !u!1 &796294508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1655,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 264138ea2f806434ba64b794d39f7bbf, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 4e025d7a0bef2a04d809508b6c736f14, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 8e5d828cbcc947b4ba54b716c5517954, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 264138ea2f806434ba64b794d39f7bbf, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 4ee80cdd1519b7d4d9aa12c5b64f6f24, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted

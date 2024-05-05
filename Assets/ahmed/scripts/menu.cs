@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class menu : MonoBehaviour
 
     bool muted = false;
     public TextMeshProUGUI mutetext;
-
+    public Button Continuebutton;
     public void muteMusic()
     {
         if (muted)
@@ -41,6 +42,8 @@ public class menu : MonoBehaviour
 
         pp obj = new pp();
         obj.newSave = true;
+        obj.child = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
+        obj.position = new Vector3 { x = 1.3f,y = -0.51f,z=0f };
 
         string json = JsonUtility.ToJson(obj);
 
@@ -68,10 +71,35 @@ public class menu : MonoBehaviour
         time = Time.time;
 
     }
+    bool fileExist = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+        try
+        {
+            pp obj = new pp();
+            obj = JsonUtility.FromJson<pp>(File.ReadAllText(Path.Combine(Application.dataPath, "Resources/" + "saves.txt")));
+            _ = obj.corpsPositions;
+            _ = obj.position;
+            _ = obj.deathNumber;
+            _ = obj.checkName;
+            _ = obj.child;
+            _ = obj.numberOfCorpses;
+            _ = obj.newSave;
+            _ = obj.childNumber;
+        }
+        catch
+        {
+            fileExist = false;
+        }
+
+        if(!fileExist)
+        {
+            Continuebutton.interactable = false;
+
+        }
+
+
     }
     float time;
     // Update is called once per frame
@@ -81,11 +109,11 @@ public class menu : MonoBehaviour
         {
             if(Time.time - time >= 2.6f)
             {
-                SceneManager.LoadSceneAsync(3);
-                SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(3, LoadSceneMode.Additive);
 
-                SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
-
+                SceneManager.sceneLoaded += onloaded;
+                wanttoStart = false;
             }
         }
 
@@ -107,4 +135,20 @@ public class menu : MonoBehaviour
         }
         
     }
+
+    private void onloaded(Scene scene, LoadSceneMode loadmode)
+    {
+        Debug.Log(scene);
+        if(scene.isLoaded && scene.buildIndex == 1)
+        {
+        Debug.Log("inside");
+            Debug.Log(Controler.newSave);
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+
+        }
+
+
+    }
+
 }

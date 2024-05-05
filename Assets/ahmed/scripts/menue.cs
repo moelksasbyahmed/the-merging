@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,9 +30,21 @@ public class menue : MonoBehaviour
     public bool wantToRestart=false;
     public void restart()
     {
-        Controler.newSave = true;
-        lm.savee();
         wantToRestart = true;
+        time = Time.time;
+
+
+
+        pp obj = new pp();
+        obj.newSave = true;
+        obj.child = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
+        obj.position = new Vector3 { x = 1.3f, y = -0.51f, z = 0f };
+
+        string json = JsonUtility.ToJson(obj);
+
+
+
+        File.WriteAllText(Path.Combine(Application.dataPath, "Resources/" + "saves.txt"), json);
         Time.timeScale = 1.0f;
         paused = false;
 
@@ -89,11 +102,7 @@ public class menue : MonoBehaviour
 
     }
     bool done = false;
-    private void Awake()
-    {
-            notice.SetActive(false);
-
-    }
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -108,23 +117,23 @@ public class menue : MonoBehaviour
         {
             done = false;
         }
-        
-        notice.SetActive(false);
 
+        Debug.Log(Controler.newSave);
         if (Controler.newSave)
         {
-        Time.timeScale = 0f;
-        paused = true;
+            Time.timeScale = 0f;
+            paused = true;
 
             notice.SetActive(true);
         }
         else
         {
             Time.timeScale = 1f;
-            paused = false
-                ;
+            paused = false;
+
             notice.SetActive(false);
         }
+
 
     }
     bool paused = false;
@@ -150,6 +159,7 @@ public class menue : MonoBehaviour
         {
             if (Time.time - time >= 1f)
             {
+                wanttoMain = false;
                 SceneManager.LoadScene(0);
 
             }
@@ -172,11 +182,11 @@ public class menue : MonoBehaviour
             if (Time.time - time >= 0.8f)
             {
 
-                SceneManager.LoadSceneAsync(3);
-                SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(3, LoadSceneMode.Additive);
 
-                SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
-
+                SceneManager.sceneLoaded += onloaded;
+                wantToRestart = false;
 
             }
         }
@@ -197,5 +207,19 @@ public class menue : MonoBehaviour
         }
 
         
+    }
+
+  private void  onloaded(Scene scene,LoadSceneMode loadmode)
+    {
+        Debug.Log(scene);
+        if (scene.isLoaded && scene.buildIndex == 1)
+        {
+            Debug.Log("loaded from menueeee (pause screen)");
+
+
+          
+        }
+
+
     }
 }
