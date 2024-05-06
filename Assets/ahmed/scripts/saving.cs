@@ -61,6 +61,7 @@ public class saving : ScriptableObject
         {
          childs.Add(   int.Parse(colorOrbs.transform.GetChild(i).name));
         }
+        GameObject[] deads = GameObject.FindGameObjectsWithTag("dead");
         pp obj = new pp();
         obj.childNumber = numberOfChilds;
         obj.child = childs;
@@ -68,12 +69,23 @@ public class saving : ScriptableObject
         obj.deathNumber = Controler.deathTimes;
         obj.newSave = Controler.newSave;
         obj.checkName = chechName;
-        obj.numberOfCorpses = GameObject.Find("corpses").transform.childCount;
+        obj.numberOfCorpses = deads.Length; 
+
 
 
         for (int i = 0; i < obj.numberOfCorpses; i++)
         {
-            obj.corpsPositions.Add(GameObject.Find("corpses").transform.GetChild(i).position);
+            if (deads[i].transform.parent != null) {
+
+                obj.corpsPositions.Add(new corpse(deads[i].transform.parent.name, deads[i].transform.position));
+            
+            }
+            else
+            {
+                obj.corpsPositions.Add(new corpse("null", deads[i].transform.position));
+
+
+            }
 
 
         }
@@ -96,13 +108,24 @@ public class saving : ScriptableObject
         pp obj = new pp();
         obj = JsonUtility.FromJson<pp>(File.ReadAllText(Path.Combine(Application.dataPath, "Resources/" + "saves.txt")));
         GameObject tewmp = player.GetComponent<Controler>().deadPlayer;
-        Transform parent = GameObject.Find("corpses").transform;
+        
         for (int i = 0; i < obj.numberOfCorpses; i++)
         {
-            Instantiate(tewmp, obj.corpsPositions[i],parent.rotation, parent);
-            
+            if(obj.corpsPositions[i].Item1 != "null")
+            {
+
+            Instantiate(tewmp, obj.corpsPositions[i].Item2, Quaternion.identity,GameObject.Find( obj.corpsPositions[i].Item1).transform);
+            }
+            else
+            {
+                Instantiate(tewmp, obj.corpsPositions[i].Item2, Quaternion.identity, null);
+
+            }
+
 
         }
+
+       
 
 
         player.transform.position = obj.position;
@@ -165,7 +188,19 @@ class pp
 
 
     public int numberOfCorpses;
-    public List<Vector3> corpsPositions = new List<Vector3>();
+    public List<corpse> corpsPositions = new List<corpse>();
 
 
+}
+
+[Serializable]
+struct corpse
+{
+    public string Item1;
+    public Vector3 Item2;
+    public corpse(string item1, Vector3 item2)
+    {
+        this.Item1 = item1;
+        this.Item2 = item2;
+    }
 }

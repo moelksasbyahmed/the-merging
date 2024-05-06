@@ -58,7 +58,7 @@ public class saw : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.transform.parent.GetComponent<Controler>().damaged();
+            collision.transform.parent.GetComponent<Controler>().damaged(null);
             
         }
 

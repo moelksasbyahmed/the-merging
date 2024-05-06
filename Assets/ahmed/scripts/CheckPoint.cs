@@ -11,6 +11,8 @@ public class CheckPoint : MonoBehaviour
     void Start()
     {
         time = Time.time;
+        if (lastCheckPoint == null )
+        lastCheckPoint = GameObject.Find("Table1 (1)");
     }
 
     // Update is called once per frame

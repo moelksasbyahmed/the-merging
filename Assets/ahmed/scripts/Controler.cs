@@ -9,21 +9,37 @@ public class Controler : MonoBehaviour
     public static int deathTimes = 0;
     public static bool newSave = true;
     public GameObject deadPlayer;
-    public Transform corpsesParent;
-    public void damaged()
+    
+    float timee;
+    public void damaged(GameObject whatKilled)
     {
         Debug.Log("damaged");
-        if(CheckPoint.lastCheckPoint != null)
+        if (CheckPoint.lastCheckPoint != null)
         {
-            die.Play();
-            Instantiate(deadPlayer,transform.position - new Vector3 { y = 0.5f}, transform.rotation,corpsesParent);
-            deathTimes++;
+            if (Time.time - timee > 0.5)
+            {
 
-            transform.position = CheckPoint.lastCheckPoint.transform.position + new Vector3 { x = 2 };
-  
-        // hearts.less();
+                timee = Time.time;
+                die.Play();
+                if (whatKilled != null)
+                {
+
+                    Instantiate(deadPlayer, transform.position - new Vector3 { y = 0.5f }, transform.rotation, whatKilled.transform);
+                }
+                else
+                {
+                    Instantiate(deadPlayer, transform.position - new Vector3 { y = 0.5f }, transform.rotation);
+
+
+                }
+                deathTimes++;
+
+                transform.position = CheckPoint.lastCheckPoint.transform.position + new Vector3 { x = 2 };
+
+                // hearts.less();
+            }
         }
-        
+
 
     }
     public void getCoin()
@@ -49,7 +65,7 @@ public class Controler : MonoBehaviour
         }
 
     }
-  public  bool alive = true;
+    public bool alive = true;
     //   public GameObject dieScreen;
     public void death()
     {
@@ -127,14 +143,14 @@ public class Controler : MonoBehaviour
     {
         if (alive)
         {
-           
-            if(transform.position.y < -45f)
+
+            if (transform.position.y < -45f)
             {
-                damaged();
+                damaged(null);
             }
             handleWallJump();
-           // uppdateScale();
-         //   checkGrounded();
+            // uppdateScale();
+            //   checkGrounded();
 
             // fire();
             HandleMovement();
@@ -180,9 +196,9 @@ public class Controler : MonoBehaviour
 
 
             isGrounded = false;
-                rb.AddForce(Vector2.up * normalJumpForce);
+            rb.AddForce(Vector2.up * normalJumpForce);
 
-            
+
         }
     }
     private void newJump()
@@ -218,7 +234,7 @@ public class Controler : MonoBehaviour
         }
     }
     public float wallJumpForce;
-  [Tooltip("1 for the up foce to be fully there, 0 for the force o be only horizontal")]
+    [Tooltip("1 for the up foce to be fully there, 0 for the force o be only horizontal")]
     public float upForceWeaker;
     void handleWallJump()
     {
@@ -276,12 +292,12 @@ public class Controler : MonoBehaviour
     private void HandleMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        if(!Mathf.Approximately(horizontalInput , 0f))
+        if (!Mathf.Approximately(horizontalInput, 0f))
         {
 
-        transform.localScale = new Vector3 { x = Mathf.Sign(horizontalInput), y = 1f, z = 1f };
+            transform.localScale = new Vector3 { x = Mathf.Sign(horizontalInput), y = 1f, z = 1f };
         }
-        float speed = (Input.GetKey(KeyCode.LeftShift) && isGrounded) ? runSpeed :(isGrounded)? walkSpeed:airControlSpeed;
+        float speed = (Input.GetKey(KeyCode.LeftShift) && isGrounded) ? runSpeed : (isGrounded) ? walkSpeed : airControlSpeed;
         Vector2 movement = new Vector2(horizontalInput * speed, rb.velocity.y);
 
         // Apply smoothing to avoid sudden velocity changes
@@ -298,10 +314,10 @@ public class Controler : MonoBehaviour
 
     void uppdateScale()
     {
-        
+
 
         transform.localScale = new Vector3 { x = Mathf.Sign(rb.velocity.x) * 1f, y = 1f, z = 1f };
-        
+
     }
 
 
@@ -364,21 +380,21 @@ public class Controler : MonoBehaviour
     float ungroundingtime;
     void checkGrounded()
     {
-        res = Physics2D.Raycast(transform.position, Vector2.down, sd, hit,3);
+        res = Physics2D.Raycast(transform.position, Vector2.down, sd, hit, 3);
         if (res >= 1)
         {
-                   if (hit[1].transform.gameObject.name == "Grid")
+            if (hit[1].transform.gameObject.name == "Grid")
+            {
+                if (Time.time - ungroundingtime > ungrouiidingtime || ungroundingtime == 0)
                 {
-                    if (Time.time - ungroundingtime > ungrouiidingtime || ungroundingtime == 0)
-                    {
-                        ungroundingtime = 0;
+                    ungroundingtime = 0;
 
-                        isGrounded = true;
-                    }
+                    isGrounded = true;
                 }
-                else
-                    isGrounded = false;
-            
+            }
+            else
+                isGrounded = false;
+
         }
         else
             isGrounded = false;

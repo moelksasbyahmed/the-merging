@@ -8,7 +8,7 @@ public class hammerDeath : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            collision.transform.parent.GetComponent<Controler>().damaged();
+            collision.transform.parent.GetComponent<Controler>().damaged(gameObject);
         }
     }
     // Start is called before the first frame update

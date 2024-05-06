@@ -95,5 +95,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f065138eb3c02374292e7a79a8465eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollectedColors: []
-  light: {fileID: 8915438459142779960}
+  collected: 0
+  end: {fileID: 0}

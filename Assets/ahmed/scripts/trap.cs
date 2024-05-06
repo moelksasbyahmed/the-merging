@@ -16,7 +16,7 @@ public class trap : MonoBehaviour
         if(collision.collider.CompareTag("Player"))
         {
           //  Debug.Log(collision.gameObject.name);
-            collision.transform.GetComponent<Controler>().damaged();
+            collision.transform.GetComponent<Controler>().damaged(gameObject);
         }
     }
 
