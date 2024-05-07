@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 [Serializable]
 public class loadManager : MonoBehaviour
@@ -13,15 +14,17 @@ public class loadManager : MonoBehaviour
     public GameObject player;
     //public CheckPoint lastCheck;
     
+    public  float saveTime;
     
     private void Start()
     {
+           // saveTime = Time.time;
         try
         {
-         
-                saving.realLoad(GameObject.Find("color orbs"), colorOrbs_prefab, player);
+           
 
-            
+            saving.realLoad(GameObject.Find("color orbs"), colorOrbs_prefab, player);
+
         }
         catch (Exception e)
         {
@@ -39,7 +42,11 @@ public class loadManager : MonoBehaviour
     }
     public void savee(string checkName)
     {
-        saving.realSave(GameObject.Find("color orbs"), player,checkName);
+        float ti = Time.timeSinceLevelLoad - saveTime;
+      //  Debug.Log(ti);
+        Debug.Log("timeeeee" + ti);
+        saveTime = Time.timeSinceLevelLoad;
+        saving.realSave(GameObject.Find("color orbs"), player,checkName,ti);
 
     }
     private void Update()

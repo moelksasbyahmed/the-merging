@@ -19,6 +19,10 @@ public class hammerTrigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(!menu.hardCoreBool && collision.CompareTag("Player"))
+        {
+
         animator.enabled = true;
+        }
     }
 }

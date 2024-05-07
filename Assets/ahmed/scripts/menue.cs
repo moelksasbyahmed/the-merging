@@ -39,7 +39,8 @@ public class menue : MonoBehaviour
         obj.newSave = true;
         obj.child = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
         obj.position = new Vector3 { x = 1.3f, y = -0.51f, z = 0f };
-
+        obj.allTime = 0;
+        saving.globalAllTime = 0;
         string json = JsonUtility.ToJson(obj);
 
 
@@ -86,7 +87,7 @@ public class menue : MonoBehaviour
         GameObject.Find("Player").GetComponent<AudioSource>().mute = true;
             mutetext.text = "unmute music";
             muted = true;
-
+            
 
         }
 
@@ -102,11 +103,25 @@ public class menue : MonoBehaviour
 
     }
     bool done = false;
-   
+    public Text timer;
     // Start is called before the first frame update
     void Start()
+
+
     {
 
+        
+
+        
+        if(menu.hardCoreBool)
+        {
+            //disable the minimap
+        }
+    else
+        {
+            //enable the mini map
+        }
+   // saving.saveTime = Time.time;
         try
         {
 
@@ -141,7 +156,9 @@ public class menue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!done)
+        timer.text = $"Time: {saving.allTimee + Time.timeSinceLevelLoad:0.00}";
+
+        if (!done)
         {
             try
             {

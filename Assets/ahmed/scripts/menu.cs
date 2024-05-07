@@ -11,6 +11,11 @@ public class menu : MonoBehaviour
     bool muted = false;
     public TextMeshProUGUI mutetext;
     public Button Continuebutton;
+
+
+    public Toggle hardcore;
+    public Toggle enableSaving;
+    public static bool hardCoreBool;
     public void muteMusic()
     {
         if (muted)
@@ -33,6 +38,9 @@ public class menu : MonoBehaviour
 
     bool wanttoStart= false;
     bool wanttoquit = false;
+
+
+    public static bool enableSavingbool;
     public void newGame()
     {
         wanttoStart = true;
@@ -44,6 +52,14 @@ public class menu : MonoBehaviour
         obj.newSave = true;
         obj.child = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
         obj.position = new Vector3 { x = 1.3f,y = -0.51f,z=0f };
+        obj.hardCore = hardcore.isOn;
+        obj.enableSaving = enableSaving.isOn;
+
+        hardCoreBool = hardcore.isOn;
+        enableSavingbool = enableSaving.isOn;
+
+        obj.allTime = 0;
+        saving.globalAllTime = 0;
 
         string json = JsonUtility.ToJson(obj);
 

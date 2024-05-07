@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -50,10 +51,13 @@ public class saving : ScriptableObject
     /// <param name="empty"> the target wich will be opied to</param>
     /// 
 
-    
+    //public static float saveTime = 0;
    static int   numberOfChilds;
     static List<int> childs = new List<int>();
-    public static  void realSave(GameObject colorOrbs,GameObject player,string chechName)
+
+
+    public static float globalAllTime = 0;
+    public static  void realSave(GameObject colorOrbs,GameObject player,string chechName,float time)
     {
         childs.Clear();
         numberOfChilds = colorOrbs.transform.childCount;
@@ -69,8 +73,11 @@ public class saving : ScriptableObject
         obj.deathNumber = Controler.deathTimes;
         obj.newSave = Controler.newSave;
         obj.checkName = chechName;
-        obj.numberOfCorpses = deads.Length; 
+        obj.numberOfCorpses = deads.Length;
+        obj.hardCore = menu.hardCoreBool;
 
+        globalAllTime += time;
+        obj.allTime = globalAllTime;
 
 
         for (int i = 0; i < obj.numberOfCorpses; i++)
@@ -129,6 +136,14 @@ public class saving : ScriptableObject
 
 
         player.transform.position = obj.position;
+
+        menu.hardCoreBool = obj.hardCore;
+
+        allTimee = obj.allTime;
+        
+
+
+
         Controler.deathTimes = obj.deathNumber;
         Controler.newSave = obj.newSave;
         CheckPoint.lastCheckPoint = GameObject.Find(obj.checkName);
@@ -151,6 +166,9 @@ public class saving : ScriptableObject
         }
         Debug.Log(obj.childNumber);
     }
+
+
+    public static double allTimee;
     public static void save(GameObject gameobject, GameObject empty)
             {
                 GameObject nw = Instantiate(empty);
@@ -187,9 +205,20 @@ class pp
    public List<int> child;
 
 
+
+
+
     public int numberOfCorpses;
     public List<corpse> corpsPositions = new List<corpse>();
 
+
+
+
+    public bool hardCore;
+    public double allTime;
+
+
+    public bool enableSaving;
 
 }
 
