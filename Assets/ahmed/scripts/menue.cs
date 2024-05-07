@@ -19,8 +19,18 @@ public class menue : MonoBehaviour
       
 
     }
+    public GameObject minimap;
     public void ok()
     {
+        if(!menu.hardCoreBool)
+        {
+            minimap.SetActive(true);
+
+        }
+        else
+        {
+            minimap.SetActive(false);
+        }
         Time.timeScale = 1.0f;
         paused = false;
         notice.SetActive(false);

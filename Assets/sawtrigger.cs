@@ -7,7 +7,7 @@ public class sawtrigger : MonoBehaviour
     public GameObject saw;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") && !menu.hardCoreBool)
+        if(collision.CompareTag("Player") && menu.hardCoreBool)
         {
             saw.GetComponent<BoxCollider2D>().enabled = true;
             saw.transform.position += new Vector3 { y = 0.5f };
