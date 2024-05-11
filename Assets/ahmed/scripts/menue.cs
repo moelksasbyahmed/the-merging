@@ -162,10 +162,11 @@ public class menue : MonoBehaviour
 
     }
     bool paused = false;
-
+   public double timeeee;
     // Update is called once per frame
     void Update()
     {
+        timeeee = saving.allTimee + Time.timeSinceLevelLoad;
         timer.text = $"Time: {saving.allTimee + Time.timeSinceLevelLoad:0.00}";
 
         if (!done)

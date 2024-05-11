@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -36,13 +37,16 @@ public class menu : MonoBehaviour
 
     }
 
-    bool wanttoStart= false;
+    bool wanttoStart = false;
     bool wanttoquit = false;
 
 
     public static bool enableSavingbool;
     public void newGame()
     {
+        try
+        {
+
         wanttoStart = true;
         time = Time.time;
 
@@ -51,7 +55,7 @@ public class menu : MonoBehaviour
         pp obj = new pp();
         obj.newSave = true;
         obj.child = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
-        obj.position = new Vector3 { x = 1.3f,y = -0.51f,z=0f };
+        obj.position = new Vector3 { x = 1.3f, y = -0.51f, z = 0f };
         obj.hardCore = hardcore.isOn;
         obj.enableSaving = enableSaving.isOn;
 
@@ -67,15 +71,23 @@ public class menu : MonoBehaviour
 
         File.WriteAllText(Path.Combine(Application.dataPath, "Resources/" + "saves.txt"), json);
 
+        }
+        catch(Exception e) {
+        
+            File.AppendAllText(Path.Combine(Application.dataPath, "Resources/" + "log.txt"), $"{e.Message}       {e.StackTrace}     \nfileExist = false;\n");
+
+        }
 
     }
+
+  
 
     public void start()
     {
         wanttoStart = true;
         time = Time.time;
 
-       
+
     }
     public void main()
     {
@@ -104,12 +116,13 @@ public class menu : MonoBehaviour
             _ = obj.newSave;
             _ = obj.childNumber;
         }
-        catch
+        catch (Exception e)
         {
             fileExist = false;
+            File.AppendAllText(Path.Combine(Application.dataPath, "Resources/" + "log.txt"), $"{e.Message}       {e.StackTrace}     \nfileExist = false;\n");
         }
 
-        if(!fileExist)
+        if (!fileExist)
         {
             Continuebutton.interactable = false;
 
@@ -121,49 +134,67 @@ public class menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(wanttoStart)
+        try
         {
-            if(Time.time - time >= 2.6f)
+
+            if (wanttoStart)
             {
-                SceneManager.LoadScene(1);
-                SceneManager.LoadScene(3, LoadSceneMode.Additive);
+                if (Time.time - time >= 2.6f)
+                {
+                    SceneManager.LoadScene(1);
+                    SceneManager.LoadScene(3, LoadSceneMode.Additive);
 
-                SceneManager.sceneLoaded += onloaded;
-                wanttoStart = false;
+                    SceneManager.sceneLoaded += onloaded;
+                    wanttoStart = false;
+                }
             }
-        }
 
-        if (wanttoquit)
-        {
-            if (Time.time - time >= 2.6f)
+            if (wanttoquit)
             {
-                Application.Quit();
+                if (Time.time - time >= 2.6f)
+                {
+                    Application.Quit();
 
 
+                }
             }
+
+
+
+            if (SceneManager.loadedSceneCount > 1)
+            {
+                SceneManager.UnloadSceneAsync(3);
+            }
+
         }
-      
-
-
-        if (SceneManager.loadedSceneCount >1)
+        catch (Exception e)
         {
-            SceneManager.UnloadSceneAsync(3);
+            File.AppendAllText(Path.Combine(Application.dataPath, "Resources/" + "log.txt"), $"{e.Message}      {e.StackTrace}");
+
         }
-        
     }
 
     private void onloaded(Scene scene, LoadSceneMode loadmode)
     {
-        Debug.Log(scene);
-        if(scene.isLoaded && scene.buildIndex == 1)
+        try
         {
-        Debug.Log("inside");
-            Debug.Log(Controler.newSave);
 
-        SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+            Debug.Log(scene);
+            if (scene.isLoaded && scene.buildIndex == 1)
+            {
+                Debug.Log("inside");
+                Debug.Log(Controler.newSave);
+
+                SceneManager.SetActiveScene(SceneManager.GetSceneAt(0));
+
+            }
 
         }
+        catch (Exception e)
+        {
+            File.AppendAllText(Path.Combine(Application.dataPath, "Resources/" + "log.txt"), $"{e.Message}   {e.StackTrace}");
 
+        }
 
     }
 

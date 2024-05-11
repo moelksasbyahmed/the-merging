@@ -9,8 +9,8 @@ public class finish : MonoBehaviour
     {
         if (ColorManager.finished && collision.CompareTag("Player"))
         {
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene(4, LoadSceneMode.Additive);
-            Time.timeScale = 0f;
         }
 
     }
@@ -23,6 +23,15 @@ public class finish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKey(KeyCode.L) && Input.GetKey(KeyCode.V) )
+            {
+
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene(4, LoadSceneMode.Additive);
+
+
+
+        }
 
     }
 }

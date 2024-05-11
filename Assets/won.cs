@@ -13,18 +13,23 @@ public class won : MonoBehaviour
     public Text achevs;
     public void main()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
     public void quit()
     {
+        Time.timeScale = 1.0f;
+
         Application.Quit();
     }
     // Start is called before the first frame update
     void Start()
     {
         achevs.text = $"enableSaving: {menu.enableSavingbool} \n hardCore: {menu.hardCoreBool}";
-        timee.text = $"Time: {Time.timeSinceLevelLoad : 0.00}";
+        timee.text = $"Time: { GameObject.FindAnyObjectByType<menue>().timeeee  : 0.00}";
+       // Debug.Log(GameObject.Find("timer text").GetComponent<menue>().timeeee);
         text.text = $"{Controler.deathTimes}";
+        Time.timeScale = 0.0f;
         
     }
 
